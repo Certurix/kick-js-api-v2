@@ -2,7 +2,6 @@ import Client from "../client/client";
 import Collection from "./collection";
 import { ENDPOINTS } from "../rest/constants";
 import Channel from "../structures/channel";
-import ChatroomManager from "./chatroom";
 
 export class ChannelManager extends Collection {
     client: Client;

@@ -31,20 +31,8 @@ class Channel implements Channel {
         this.playback_url = channel.playback_url;
         this.banner_image = channel.banner_image;
         this.followersCount = channel.followersCount;
-        this.chatroom = channel.chatroom;
     }
 
-    sendMessage(message: string) {
-        this.client.rest.fetcher.post(ENDPOINTS.sendChatMessaage, {
-            chatroom_id: this.chatroom.id,
-            //cuz they want in seconds
-            created_at:  Math.round(Date.now() / 1000),
-            message: message,
-            id: randomBytes(32).toString("hex")
-        }).then(res => {
-            console.log(res.data);
-        });
-    }
 }
 
 export default Channel;
